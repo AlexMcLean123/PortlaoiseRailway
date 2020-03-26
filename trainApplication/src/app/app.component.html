@@ -1,0 +1,33 @@
+<div class="jumbotron jumbotron-fluid">
+  <img class="Myimg" src="/assets/trainIcon.png" width="200" height="200" />
+  <div class ="card" class ="myClock"><h1>{{ time | date: 'hh:mm:ss a' }}</h1> </div>
+  <div class="d-inline" class="container">
+    <h1 class="display-4">Portlaoise Railway Station</h1>
+    <p class="lead">Real time information for Portlaoise railway station!</p>
+  </div>
+</div>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope ="col">Due In</th>
+      <th scope="col">Origin</th>
+      <th scope="col">Destination</th>
+      <th scope="col">Expected Departure Time from Portlaoise</th>
+      <th scope="col">Arrival Time at destination</th>
+      <th scope="col">Last Location</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of xmlItems">  
+      <td>{{item.dueIn}} minutes</td>  
+      <td>{{item.origin}}</td>    
+      <td>{{item.dest}}</td>    
+      <td>{{item.expectedDeparture}}</td> 
+      <td>{{item.arrival}}</td>   
+      <td>{{item.lastLoc}}</td>   
+
+    </tr>  
+  </tbody>
+</table>
